@@ -31,21 +31,21 @@ var basic = auth.basic({
 
 var server;
 
-if (vcxconfig.SERViCE.listen_ssl === true) {
-    var options = {
-        key: fs.readFileSync(vcxconfig.Certificate.ssl_key).toString(),
-        cert: fs.readFileSync(vcxconfig.Certificate.ssl_cert).toString(),
-    }
-    if (vcxconfig.Certificate.sslCaCerts) {
-        options.ca = [];
-        for (var ca in vcxconfig.Certificate.sslCaCerts) {
-            // options.ca.push(fs.readFileSync(vcxconfig.Certificate.sslCaCerts[ca]).toString());
-        }
-    }
-    server = https.createServer(options, app);
-} else {
+// if (vcxconfig.SERViCE.listen_ssl === true) {
+//     var options = {
+//         key: fs.readFileSync(vcxconfig.Certificate.ssl_key).toString(),
+//         cert: fs.readFileSync(vcxconfig.Certificate.ssl_cert).toString(),
+//     }
+//     if (vcxconfig.Certificate.sslCaCerts) {
+//         options.ca = [];
+//         for (var ca in vcxconfig.Certificate.sslCaCerts) {
+//             // options.ca.push(fs.readFileSync(vcxconfig.Certificate.sslCaCerts[ca]).toString());
+//         }
+//     }
+//     server = https.createServer(options, app);
+// } else {
     server = http.createServer(app);
-}
+// }
 
 var port = normalizePort(vcxconfig.SERViCE.port);
 
@@ -127,7 +127,6 @@ app.use(express.static(vcxconfig.clientPath));
 // Route: To get liist of all Rooms in your Application
 
 app.get('/getAllRooms', function (req, res) {
-
     vcxroom.getAllRooms(function (data) {
         res.status(200);
         res.send(data);
@@ -161,5 +160,4 @@ app.post('/createRoom/', function (req, res) {
         res.send(data);
         res.status(200);
     });
-
 });
