@@ -39,7 +39,7 @@ if (vcxconfig.SERViCE.listen_ssl === true) {
     if (vcxconfig.Certificate.sslCaCerts) {
         options.ca = [];
         for (var ca in vcxconfig.Certificate.sslCaCerts) {
-            options.ca.push(fs.readFileSync(vcxconfig.Certificate.sslCaCerts[ca]).toString());
+            // options.ca.push(fs.readFileSync(vcxconfig.Certificate.sslCaCerts[ca]).toString());
         }
     }
     server = https.createServer(options, app);
@@ -163,6 +163,3 @@ app.post('/createRoom/', function (req, res) {
     });
 
 });
-
-
-
