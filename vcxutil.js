@@ -13,7 +13,7 @@ var btoa = require('btoa');
 var http = require('http');
 var https = require('https');
 var vcxconfig = require('./vcxconfig');
-var log = require('../util/logger/logger').logger;
+var log = require('./util/logger/logger').logger;
 var logger = log.getLogger('AppApi');
 var vcxutil = {};
 
