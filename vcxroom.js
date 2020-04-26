@@ -13,8 +13,8 @@ var fs = require('fs')
 var vcxconfig = require('./vcxconfig')
 var vcxutil = require('./vcxutil')
 
-var log = require('./util/logger/logger').logger;
-var logger = log.getLogger('AppApi');
+// var log = require('./util/logger/logger').logger;
+// var logger = log.getLogger('AppApi');
 var vcxroom = {};
 
 var obj = {
@@ -42,8 +42,8 @@ var obj = {
 var port = vcxconfig.SERVER_API_SERVER.port;
 var options = {
     host: vcxconfig.SERVER_API_SERVER.host,
-    key: fs.readFileSync(vcxconfig.Certificate.ssl_key).toString(),
-    cert: fs.readFileSync(vcxconfig.Certificate.ssl_cert).toString(),
+    // key: fs.readFileSync(vcxconfig.Certificate.ssl_key).toString(),
+    // cert: fs.readFileSync(vcxconfig.Certificate.ssl_cert).toString(),
     headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + vcxutil.getBasicAuthToken()

@@ -13,8 +13,8 @@ var btoa = require('btoa');
 var http = require('http');
 var https = require('https');
 var vcxconfig = require('./vcxconfig');
-var log = require('./util/logger/logger').logger;
-var logger = log.getLogger('AppApi');
+// var log = require('./util/logger/logger').logger;
+// var logger = log.getLogger('AppApi');
 var vcxutil = {};
 
 
@@ -33,8 +33,8 @@ vcxutil.getBasicAuthToken = function () {
 // Function: To connect to Enablex Server API Service
 
 vcxutil.connectServer = function (options, data, callback) {
-    logger.info("REQ URI:- " + options.method + " " + options.host + ":" + options.port + options.path);
-    logger.info("REQ PARAM:- " + data);
+    // logger.info("REQ URI:- " + options.method + " " + options.host + ":" + options.port + options.path);
+    // logger.info("REQ PARAM:- " + data);
     var request = https.request(options, function (res) {
         res.on('data', function (chunk) {
             logger.info("RESPONSE DATA:- " + chunk);
