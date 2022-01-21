@@ -20,7 +20,7 @@
     "heroku": "^7.39.5",
     "http-auth": "^3.2.3",
     "localStorage": "^1.0.3",
-    "log4js": "^1.0.1"
+    "log4js": "^6.4.0"
   },
   "devDependencies": {
     "request": "^2.81.0",
